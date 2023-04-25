@@ -1,6 +1,14 @@
 #include "main.h"
 
-int	ft_checkmate(const char c, va_list ap)
+/**
+ * ft_check - Checks the format specifier and prints the corresponding argument
+ * @c: The format specifier to check
+ * @ap: The argument list
+ *
+ * Return: The number of characters printed
+ */
+
+int	ft_check(const char c, va_list ap)
 {
 	int		count;
 
@@ -14,6 +22,11 @@ int	ft_checkmate(const char c, va_list ap)
 	return (count);
 }
 
+/**
+ * _printf - produces output according to format
+ * @s: format in which output is produced
+ * Return: Printed chars.
+ */
 int	_printf(const char *s, ...)
 {
 	va_list		ap;
@@ -28,7 +41,7 @@ int	_printf(const char *s, ...)
 		if (s[i] == '%')
 		{
 			i++;
-			count += ft_checkmate(s[i], ap);
+			count += ft_check(s[i], ap);
 		}
 		else
 			count += ft_putchar(s[i]);
@@ -36,9 +49,3 @@ int	_printf(const char *s, ...)
 	}
 	return (count);
 }
-
-/*int main()
-{
-	int x = '%';
-	ft_printf("%%", x);
-}*/
