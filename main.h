@@ -9,6 +9,6 @@
 
 int			ft_putstr(const char *s);
 int			ft_putchar(char c);
-int			ft_printf(const char *s, ...);
+int			_printf(const char *s, ...);
 
 #endif
